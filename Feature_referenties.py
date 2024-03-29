@@ -59,7 +59,7 @@ def show_page():
         referentie_gemeente = st.selectbox(label="In welke gemeente wilt u zoeken?",options=lijst_gemeentes,index=0 )
         
         st.button("Zoeken", on_click=lambda: show_results())
-        result = st.container(height=300)
+        result = st.container()
 
         
                         
