@@ -16,8 +16,8 @@ from datetime import datetime, timedelta
 
 
 
-lijst_gemeentes = ("x gemeente", "y_gemeente", "z_gemeente")
-lijst_straatnamen = ["Bremstraat", "Hofstraat", "werfweg"]
+lijst_gemeentes = ("Deinze", "Oostrozebeke", "Mechelen", "Lokeren", "Aalst")
+lijst_straatnamen = ["Bremstraat", "Hofstraat", "werfweg", "Haverwerf", "Oude Liersebaan", "Kattestraat", "Caputsteenstraat", "Twee Huizenstraat"]
 
 
     
