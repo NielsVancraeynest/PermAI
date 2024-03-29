@@ -50,7 +50,7 @@ def show_page():
             placeholder="Selecteer een decreet" )
         
         st.button("Zoeken", on_click=lambda: show_results())
-        result = st.container(border=False,height=300)
+        result = st.container(border=False,height=450)
 
         
                         
