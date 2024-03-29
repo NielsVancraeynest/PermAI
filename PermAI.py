@@ -71,7 +71,7 @@ def show_page():
     def on_download_click():
         # Set the variable to True when the button is clicked
         st.query_params["download"] = False
-        file.close()
+        
         
 
     def show_results():
@@ -106,7 +106,7 @@ def show_page():
         result = st.container(border=False)
         if result.button("Genereer voorstel", on_click=show_results):
             st.rerun()
-        print(st.query_params["download"])
+
         if st.query_params["download"] == "Klaar":
             result.download_button("Download vergunning", 'test.xlsx', file_name="PermAI_" + file.name +".pdf", key="vergunning",
                                             on_click=on_download_click)
