@@ -32,7 +32,7 @@ def show_page():
                 startDate = datetime(2024, 3, 28) - timedelta(days=data_found)
                 for i in range(data_found):
                     with result.container():
-                        col1,col2 =st.columns([3,1])
+                        col1,col2 =result.columns([3,1])
                         with col1:
                             generated_index = letter_to_int((3*(referentie_zoeken + referentie_gemeente))[i])
                             index_random_straat = generated_index%len(lijst_straatnamen)
