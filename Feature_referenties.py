@@ -56,7 +56,7 @@ def show_page():
     with col:
         referentie_zoeken = st.text_input("Op welk keyword wil je een vergunning zoeken?", placeholder="vb:tuinhuis")
 
-        referentie_gemeente = st.selectbox(label="In welke gemeente wilt u zoeken?",options=lijst_gemeentes,index=None" )
+        referentie_gemeente = st.selectbox(label="In welke gemeente wilt u zoeken?",options=lijst_gemeentes,index=None,*placeholder="Selecteer een gemeente"" )
         
         st.button("Zoeken", on_click=lambda: show_results())
         result = st.container(border=False,height=300)
