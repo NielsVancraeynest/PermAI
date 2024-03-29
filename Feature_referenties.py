@@ -62,7 +62,7 @@ def show_page():
             placeholder="Selecteer een gemeente" )
         
         st.button("Zoeken", on_click=lambda: show_results())
-        result = st.container(border=False,height=450)
+        result = st.container(border=False,height=300)
 
         
                         
