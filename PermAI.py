@@ -92,7 +92,8 @@ def show_page():
                 st.write("Finaal document genereren...")
 
                 sleep(2)
-               
+            st.query_params["download"] = "Klaar"
+
             
                 # components.html(
                 #     download_button(pd.DataFrame(), "PermAI_" + file.name +".pdf"))
