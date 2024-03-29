@@ -46,8 +46,7 @@ def show_page():
 
         soort_discreet = st.selectbox("Welk soort Decreet zoekt u?",
             lijst_decreet,
-            index=None,
-            placeholder="Selecteer een decreet" )
+            index=0)
         
         st.button("Zoeken", on_click=lambda: show_results())
         result = st.container(border=False,height=300)
