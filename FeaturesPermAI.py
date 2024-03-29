@@ -43,6 +43,7 @@ def show_page():
         Feature_wetgeving.show_page()
     if menu_id == "Bouwvoorschriften":
         Feature_bouwvergunning.show_page()
-
+    if menu_id != "PermAI":
+        st.query_params["download"] = False
     
     return 1
