@@ -31,7 +31,7 @@ def show_page():
                 result.write(f"Er zijn {data_found} resultaten gevonden.")
                 startDate = datetime(2024, 3, 28) - timedelta(days=data_found)
                 for i in range(data_found):
-                    with result.container(border=True):
+                    with result.container():
                         col1,col2 =st.columns([3,1])
                         with col1:
                             generated_index = letter_to_int((3*(referentie_zoeken + referentie_gemeente))[i])
