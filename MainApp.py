@@ -91,7 +91,7 @@ def footer():
 
 st.set_page_config(
         page_title="PermAI",
-        page_icon="docs/PermAI_logo.ico",
+        page_icon="docs/PermAI_logo.jpg",
         layout="wide",
         initial_sidebar_state='collapsed')
 

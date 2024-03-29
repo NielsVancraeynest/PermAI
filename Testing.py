@@ -1,12 +1,6 @@
 import streamlit as st
+import os
 
-st.markdown("""
-<style>
-label[for*="streamlit"] {
-    color: white;
-}
-</style>
-""", unsafe_allow_html=True)
-
-st.markdown('<p style="color:white;">Choose the order type</p>', unsafe_allow_html=True)
-choice = st.radio("", ["A", "B"])
+result = os.popen('pip list').read()
+print(result)
+st.code(result, language=None)

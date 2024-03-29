@@ -16,14 +16,14 @@ from datetime import datetime, timedelta
 
 
 
-lijst_decreet = ("VCRO", "Decreet omgevingsvergunningen", "Uitvoeringsbesluiten")
+lijst_voorschriften = ("RUP", "BPA", "APA")
 
 
 
     
 def show_page():
     def show_results():
-        if soort_discreet != None  and wetgeving_zoeken != None:
+        if soort_voorschriften != None  and voorschriften_zoeken != None:
             amount = 28
             result.write(f"Er zijn {amount} resultaten gevonden.")
             for i in range(amount):
@@ -42,10 +42,10 @@ def show_page():
     emptycol1,col,emptycol2 =st.columns([1,3,1])
     
     with col:
-        wetgeving_zoeken = st.text_input("Op welk keyword wil je in de wetgeving zoeken?", placeholder="vb:tuinhuis", key="wetgeving")
+        voorschriften_zoeken = st.text_input("Op welk keyword wil je in de bouwvoorschriften zoeken?", placeholder="vb:tuinhuis", key="bouwvergunning")
 
-        soort_discreet = st.selectbox(label ="Welk soort Decreet zoekt u?",
-            options=lijst_decreet,
+        soort_voorschriften = st.selectbox("Welk soort voorschrift zoekt u?",
+            lijst_voorschriften,
             index=None,
             placeholder="Selecteer een decreet" )
         

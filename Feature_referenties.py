@@ -31,8 +31,8 @@ def show_page():
                 result.write(f"Er zijn {data_found} resultaten gevonden.")
                 startDate = datetime(2024, 3, 28) - timedelta(days=data_found)
                 for i in range(data_found):
-                    with result.container():
-                        col1,col2 =result.columns([3,1])
+                    with result.container(border=True):
+                        col1,col2 =st.columns([3,1])
                         with col1:
                             generated_index = letter_to_int((3*(referentie_zoeken + referentie_gemeente))[i])
                             index_random_straat = generated_index%len(lijst_straatnamen)
@@ -56,10 +56,13 @@ def show_page():
     with col:
         referentie_zoeken = st.text_input("Op welk keyword wil je een vergunning zoeken?", placeholder="vb:tuinhuis")
 
-        referentie_gemeente = st.selectbox(label="In welke gemeente wilt u zoeken?",options=lijst_gemeentes,index=0 )
+        referentie_gemeente = st.selectbox("In welke gemeente wilt u zoeken?",
+            lijst_gemeentes,
+            index=None,
+            placeholder="Selecteer een gemeente" )
         
         st.button("Zoeken", on_click=lambda: show_results())
-        result = st.container()
+        result = st.container(border=False,height=300)
 
         
                         
