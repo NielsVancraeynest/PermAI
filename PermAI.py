@@ -89,7 +89,7 @@ def show_page():
     
     with col:
         file = st.file_uploader("Importeer de aanvraag",type=["docx", "pdf"])
-        result = st.container(border=False)
+        result = st.container()
         if result.button("Genereer voorstel", on_click=show_results):
             st.rerun()
                
