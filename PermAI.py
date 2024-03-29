@@ -67,7 +67,7 @@ def show_page():
 
     def show_results():
         if file != None:
-            with result.status("Perm**A:blue[I] Smarter** *permits*, :blue[**faster** *approvals*]", expanded=True) as status:
+            with result.status("Perm**A:blue[I] Smarter** *permits*, :blue[**faster** *approvals*]", expanded=True):
                 st.write("Document scannen...")
                 sleep(2)
                 st.write("Voorbereiden om features te doorlopen...")
