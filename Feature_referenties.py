@@ -27,16 +27,16 @@ def show_page():
         return alphabet.index(str.lower(letter)) + 1
     def show_results():
         if referentie_gemeente !=None and referentie_zoeken != "":
-                data_found = int(round((len(referentie_zoeken) + len(referentie_gemeente))*2.5,0))
-                result.write(f"Er zijn {data_found} resultaten gevonden.")
+                data_found = int(round((len(referentie_zoeken) + len(referentie_gemeente))*4.5,0))
+                result.write(f"Er zijn {data_found} resultaten gevonden voor {referentie_zoeken}.")
                 startDate = datetime(2024, 3, 28) - timedelta(days=data_found)
                 for i in range(data_found):
                     with result.container(border=True):
                         col1,col2 =st.columns([3,1])
                         with col1:
-                            generated_index = letter_to_int((3*(referentie_zoeken + referentie_gemeente))[i])
+                            generated_index = letter_to_int((5*(referentie_zoeken + referentie_gemeente))[i])
                             index_random_straat = generated_index%len(lijst_straatnamen)
-                            random_huisnr = generated_index*int(round((len(referentie_zoeken)+len(referentie_gemeente))/1.5,0))
+                            random_huisnr = generated_index*int(round((len(referentie_zoeken)+len(referentie_gemeente))/6,0))
                             st.markdown(f"**Vergunning {referentie_zoeken} {lijst_straatnamen[index_random_straat]} {random_huisnr} te {referentie_gemeente}**")
                             st.download_button("Download pdf", 'test.xlsx', file_name=f"Vergunning {referentie_zoeken} {lijst_straatnamen[index_random_straat]} {random_huisnr} te {referentie_gemeente}.pdf", key=i,
                                                on_click=lambda: show_results())

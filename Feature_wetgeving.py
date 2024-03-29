@@ -17,20 +17,20 @@ from datetime import datetime, timedelta
 
 
 lijst_decreet = ("VCRO", "Decreet omgevingsvergunningen", "Uitvoeringsbesluiten")
-
-
+wetten_lijst = ["'Meldingsplicht' 16/7/2021", "'Vrijgestelde handelingen'", "'Afwijkingen'"]
+artikelen_lijst = ["Art 1.4) Tuinhuizen als vrijstaande volumes.", "Art 1.1.2°A) Tuinhuizen < 40m^2 hoeven geen vergunning te hebben.",
+                   "Art 7.2) Tuinhuizen die voorzien zijn van..."]
 
     
 def show_page():
     def show_results():
         if soort_discreet != None  and wetgeving_zoeken != None:
-            amount = 28
-            result.write(f"Er zijn {amount} resultaten gevonden.")
-            for i in range(amount):
-                with result.expander("**Uitvoeringsbesluit 'Meldingsplicht 16/7/2021**"):
-                    st.write("""
-                        Art 1.4) Tuinhuizen als vrijstaande volumes
-                                """)
+            data_found = int(round((len(soort_discreet) + len(wetgeving_zoeken))*0.8,0))
+            result.write(f"Er zijn {data_found} resultaten gevonden voor {wetgeving_zoeken}.")
+            for i in range(data_found):
+                index = i%len(wetten_lijst)
+                with result.expander(f"**{soort_discreet} {wetten_lijst[index]}**"):
+                    st.write(artikelen_lijst[index])
 
     # Download the template based on the value dictionary
     # st.sidebar.download_button("Download template", pd.DataFrame([values.keys()]).to_csv(sep = ';',header = False ,index=False), file_name="template.csv")
