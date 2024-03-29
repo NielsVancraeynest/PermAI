@@ -75,7 +75,7 @@ def show_page():
         
 
     def show_results():
-        st.query_params["download"] = "Klaar"
+        
 
         if file != None:
             with result.status("Perm**A:blue[I] Smarter** *permits*, :blue[**faster** *approvals*]", expanded=True):
@@ -90,10 +90,8 @@ def show_page():
                 st.write(":blue[- bouwvoorschriften]")
                 sleep(3)
                 st.write("Finaal document genereren...")
-
                 sleep(2)
             st.query_params["download"] = "Klaar"
-
             
                 # components.html(
                 #     download_button(pd.DataFrame(), "PermAI_" + file.name +".pdf"))
@@ -107,7 +105,7 @@ def show_page():
         result = st.container(border=False)
         if result.button("Genereer voorstel", on_click=show_results):
             st.rerun()
-
+        print(st.query_params["download"])
         if st.query_params["download"] == "Klaar":
             result.download_button("Download vergunning", 'test.xlsx', file_name="PermAI_" + file.name +".pdf", key="vergunning",
                                             on_click=on_download_click)
